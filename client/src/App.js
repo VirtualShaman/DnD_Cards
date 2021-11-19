@@ -128,7 +128,7 @@ function App() {
         </Switch>
 
         <div className="d-flex justify-content-center fixed-bottom background">
-          <a className="bg-dark px-1 border border-2 border-dark rounded" href="https://github.com/VirtualShaman?tab=repositories">GitHub Link</a>
+          <a className="bg-dark px-1 border border-2 border-dark rounded" href="https://github.com/VirtualShaman/DnD_Cards">GitHub Link</a>
           <a className="bg-dark px-1 border border-2 border-dark rounded" href="https://www.dnd5eapi.co/docs/#feats-section">DnD API</a>
         </div>
 
