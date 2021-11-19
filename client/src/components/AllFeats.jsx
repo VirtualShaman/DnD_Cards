@@ -1,0 +1,41 @@
+import React, {useState, useEffect} from 'react';
+import axios from 'axios';
+
+import {Link} from "react-router-dom"
+
+const AllFeats = (props) => {
+
+    const [allFeats, setAllFeats] = useState([])
+
+    useEffect(()=>{
+        axios.get("https://www.dnd5eapi.co/api/feats/")
+            .then(response=>{
+                console.log("All API feats response:", response)
+                setAllFeats(response.data.results.sort((a, b) => a.name.localeCompare(b.name)))
+            })
+            .catch(err=>console.log("Error Message:", err))
+    },[props.formSubmitted])
+
+    return (
+        <div className="d-flex flex-column align-items-center">
+            <div className="d-flex flex-column align-items-center border border-1 rounded p-3">
+                <h1>Feat List</h1>
+                <div style={{overflow: "auto", maxHeight: "400px", width: "300px"}}>
+                    {
+                        allFeats.map((feat,i)=>{
+                            return (
+                                <div key = {`feat${i}`}>
+                                    <p><Link to={`/feat/${feat.index}`}>
+                                        {feat.name}
+                                    </Link></p>
+                                </div>
+                            )
+                        })
+                    }
+                </div>
+            </div>
+        </div>
+    );
+};
+
+export default AllFeats;
