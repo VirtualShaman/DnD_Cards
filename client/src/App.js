@@ -1,13 +1,23 @@
 import React, {useState} from 'react';
+import {
+  BrowserRouter,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom"
+
 import Search from './components/Search';
 
 import AllFeats from './components/AllFeats';
+import AllFeatsSearch from './components/AllFeatsSearch';
 import OneFeat from './components/OneFeat';
 
 import AllClassFeats from './components/AllClassFeats';
+import AllClassFeatsSearch from './components/AllClassFeatsSearch';
 import OneClassFeat from './components/OneClassFeat';
 
 import AllSpells from './components/AllSpells';
+import AllSpellsSearch from './components/AllSpellsSearch';
 import OneSpell from './components/OneSpell';
 
 import HomebrewAllFeats from './components/HomebrewAllFeats';
@@ -25,12 +35,6 @@ import HomebrewOneSpell from './components/HomebrewOneSpell';
 import CreateSpell from './components/CreateSpell';
 import EditSpell from './components/EditSpell';
 
-import {
-  BrowserRouter,
-  Switch,
-  Route,
-  Link
-} from "react-router-dom"
 
 function App() {
   const [formSubmitted, setFormSubmitted] = useState(false)
@@ -42,6 +46,23 @@ function App() {
       <Link to="/homebrew"><button>Homebrew</button></Link>
       <hr/>
         <Switch>
+
+        <Route exact path="/search/:infoType/:searchName">
+          <Search/>
+            <div className="d-flex flex-wrap justify-content-center">
+              <div className="m-4">
+                <AllSpellsSearch/>
+              </div>
+              <div className="d-flex justify-content-center">
+                <div className="m-4">
+                  <AllClassFeatsSearch/>
+                </div><div className="m-4">
+                  <AllFeatsSearch/>
+                </div>
+              </div>
+            </div>
+        </Route>
+
           <Route exact path="/">
           <Search/>
             <div className="d-flex flex-wrap justify-content-center">

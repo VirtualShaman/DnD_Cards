@@ -31,9 +31,9 @@ const OneFeat = () => {
                                     <div key = {i}>
                                     {
                                         featInfo.prerequisites[i+1]!==undefined?
-                                            <p class="m-1">{prerequisites.ability_score.name}-{prerequisites.minimum_score},</p>
+                                            <p class="mx-1">{prerequisites.ability_score.name}-{prerequisites.minimum_score},</p>
                                         :
-                                            <p class="m-1">{prerequisites.ability_score.name}-{prerequisites.minimum_score}</p>
+                                            <p class="mx-1">{prerequisites.ability_score.name}-{prerequisites.minimum_score}</p>
                                     }
                                     </div>
                                 )

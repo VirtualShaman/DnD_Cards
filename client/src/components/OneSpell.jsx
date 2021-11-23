@@ -29,9 +29,9 @@ const OneSpell = () => {
                                         {console.log(spellInfo.classes[i+1])}
                                     {
                                         spellInfo.classes[i+1]!==undefined?
-                                            <p class="m-1">{classes.name}, </p>
+                                            <p class="mx-1">{classes.name}, </p>
                                         :
-                                            <p class="m-1">{classes.name}</p>
+                                            <p class="mx-1">{classes.name}</p>
                                     }
                                     </div>
                                 )
