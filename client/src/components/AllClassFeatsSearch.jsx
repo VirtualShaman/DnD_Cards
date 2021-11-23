@@ -24,8 +24,9 @@ const AllClassFeats = (props) => {
                     {
                         allClassFeats.map((classfeat,i)=>
                         <div key = {`class${i}`}>
-                        {infoType==="classFeatures"||"all"?
-                                    (((classfeat.name).toLowerCase()).startsWith(searchName.toLowerCase())===true&&
+                        {infoType==="classFeatures"||
+                                    infoType==="all"?
+                                    (((classfeat.name).toLowerCase()).includes(searchName.toLowerCase())===true&&
                                     i<allClassFeats.length-1&&
                                     classfeat.name!==allClassFeats[i+1].name?
 
@@ -36,9 +37,14 @@ const AllClassFeats = (props) => {
                                         <div />
                                     )
                                 :
-                                    <p><Link to={`/classfeat/${classfeat.index}`}>
-                                        {classfeat.name}
-                                    </Link></p>
+                                    (i<allClassFeats.length-1&&
+                                    classfeat.name!==allClassFeats[i+1].name?
+                                        <p><Link to={`/classfeat/${classfeat.index}`}>
+                                            {classfeat.name}
+                                        </Link></p>
+                                    :
+                                        <div/>
+                                    )
                         }
                         </div>
                         )

@@ -1,5 +1,5 @@
 // import React, {useState, useEffect} from 'react';
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {useHistory} from 'react-router-dom'
 import axios from 'axios';
 
@@ -10,7 +10,6 @@ const Search = (props) => {
         searchName:"",
         infoType:"all"
     })
-
     // useEffect(()=>{
     //     axios.get("https://www.dnd5eapi.co/api/classes/")
     //         .then(response=>{

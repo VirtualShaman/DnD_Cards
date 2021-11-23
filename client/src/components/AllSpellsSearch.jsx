@@ -27,8 +27,9 @@ const AllSpells = (props) => {
                         allSpells.map((spell,i)=>{
                             return (
                                 <div key = {`spell${i}`}>
-                                    {infoType==="spells"||"all"?
-                                            (((spell.name).toLowerCase()).startsWith(searchName.toLowerCase())===true?
+                                    {infoType==="spells"||
+                                    infoType==="all"?
+                                            (((spell.name).toLowerCase()).includes(searchName.toLowerCase())===true?
                                                 <p><Link to={`/spell/${spell.index}`}>
                                                     {spell.name}
                                                 </Link></p>

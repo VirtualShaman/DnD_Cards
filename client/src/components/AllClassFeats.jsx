@@ -1,10 +1,10 @@
 import React, {useState, useEffect} from 'react';
-import axios from 'axios';
-
-import {Link} from "react-router-dom"
+import { useParams } from 'react-router';
+import {Link} from "react-router-dom";
+import axios from 'axios'
 
 const AllClassFeats = (props) => {
-
+    const { infoType, searchName } = useParams();
     const [allClassFeats, setAllClassFeats] = useState([])
 
     useEffect(()=>{
@@ -23,13 +23,28 @@ const AllClassFeats = (props) => {
                 <div style={{overflow: "auto", maxHeight: "400px", width: "300px"}}>
                     {
                         allClassFeats.map((classfeat,i)=>
-                        <div key = {`class${i}`}>{
-                            i<allClassFeats.length-1&&classfeat.name!==allClassFeats[i+1].name?
-                                    <p><Link to={`/classfeat/${classfeat.index}`}>
-                                        {classfeat.name}
-                                    </Link></p>
-                            :
-                                <div />
+                        <div key = {`class${i}`}>
+                        {infoType==="classFeatures"||
+                                    infoType==="all"?
+                                    (((classfeat.name).toLowerCase()).includes(searchName.toLowerCase())===true&&
+                                    i<allClassFeats.length-1&&
+                                    classfeat.name!==allClassFeats[i+1].name?
+
+                                            <p><Link to={`/classfeat/${classfeat.index}`}>
+                                                {classfeat.name}
+                                            </Link></p>
+                                    :
+                                        <div />
+                                    )
+                                :
+                                    (i<allClassFeats.length-1&&
+                                    classfeat.name!==allClassFeats[i+1].name?
+                                        <p><Link to={`/classfeat/${classfeat.index}`}>
+                                            {classfeat.name}
+                                        </Link></p>
+                                    :
+                                        <div/>
+                                    )
                         }
                         </div>
                         )

@@ -1,10 +1,12 @@
 import React, {useState, useEffect} from 'react';
+import { useParams } from 'react-router';
 import axios from 'axios';
 
 import {Link} from "react-router-dom"
 
 const AllSpells = (props) => {
-
+    const { infoType, searchName } = useParams();
+    console.log(infoType)
     const [allSpells, setAllSpells] = useState([])
 
     useEffect(()=>{
@@ -25,9 +27,20 @@ const AllSpells = (props) => {
                         allSpells.map((spell,i)=>{
                             return (
                                 <div key = {`spell${i}`}>
-                                    <p><Link to={`/spell/${spell.index}`}>
-                                        {spell.name}
-                                    </Link></p>
+                                    {infoType==="spells"||
+                                    infoType==="all"?
+                                            (((spell.name).toLowerCase()).includes(searchName.toLowerCase())===true?
+                                                <p><Link to={`/spell/${spell.index}`}>
+                                                    {spell.name}
+                                                </Link></p>
+                                            :
+                                            <div/>
+                                            )
+                                        :
+                                            <p><Link to={`/spell/${spell.index}`}>
+                                                {spell.name}
+                                            </Link></p>
+                                    }
                                 </div>
                             )
                         })

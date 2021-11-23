@@ -26,8 +26,9 @@ const AllFeats = (props) => {
                         allFeats.map((feat,i)=>{
                             return (
                                 <div key = {`feat${i}`}>
-                                    {infoType==="feats"||"all"?
-                                            (((feat.name).toLowerCase()).startsWith(searchName.toLowerCase())===true?
+                                    {infoType==="feats"||
+                                    infoType==="all"?
+                                            (((feat.name).toLowerCase()).includes(searchName.toLowerCase())===true?
                                                 <p><Link to={`/feat/${feat.index}`}>
                                                     {feat.name}
                                                 </Link></p>

@@ -9,15 +9,12 @@ import {
 import Search from './components/Search';
 
 import AllFeats from './components/AllFeats';
-import AllFeatsSearch from './components/AllFeatsSearch';
 import OneFeat from './components/OneFeat';
 
 import AllClassFeats from './components/AllClassFeats';
-import AllClassFeatsSearch from './components/AllClassFeatsSearch';
 import OneClassFeat from './components/OneClassFeat';
 
 import AllSpells from './components/AllSpells';
-import AllSpellsSearch from './components/AllSpellsSearch';
 import OneSpell from './components/OneSpell';
 
 import HomebrewAllFeats from './components/HomebrewAllFeats';
@@ -51,13 +48,13 @@ function App() {
           <Search/>
             <div className="d-flex flex-wrap justify-content-center">
               <div className="m-4">
-                <AllSpellsSearch/>
+                <AllSpells/>
               </div>
               <div className="d-flex justify-content-center">
                 <div className="m-4">
-                  <AllClassFeatsSearch/>
+                  <AllClassFeats/>
                 </div><div className="m-4">
-                  <AllFeatsSearch/>
+                  <AllFeats/>
                 </div>
               </div>
             </div>
