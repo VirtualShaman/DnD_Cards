@@ -7,6 +7,7 @@ import {
 } from "react-router-dom"
 
 import Search from './components/Search';
+import HomebrewSearch from './components/HomebrewSearch';
 
 import AllFeats from './components/AllFeats';
 import OneFeat from './components/OneFeat';
@@ -42,23 +43,9 @@ function App() {
       <Link to="/"><button>Home</button></Link>
       <Link to="/homebrew"><button>Homebrew</button></Link>
       <hr/>
-        <Switch>
 
-        <Route exact path="/search/:infoType/:searchName">
-          <Search/>
-            <div className="d-flex flex-wrap justify-content-center">
-              <div className="m-4">
-                <AllSpells/>
-              </div>
-              <div className="d-flex justify-content-center">
-                <div className="m-4">
-                  <AllClassFeats/>
-                </div><div className="m-4">
-                  <AllFeats/>
-                </div>
-              </div>
-            </div>
-        </Route>
+
+        <Switch>
 
           <Route exact path="/">
           <Search/>
@@ -76,8 +63,54 @@ function App() {
             </div>
           </Route>
 
-          <Route exact path="/homebrew">
+        <Route exact path="/search/:infoType/:searchName">
           <Search/>
+            <div className="d-flex flex-wrap justify-content-center">
+              <div className="m-4">
+                <AllSpells/>
+              </div>
+              <div className="d-flex justify-content-center">
+                <div className="m-4">
+                  <AllClassFeats/>
+                </div><div className="m-4">
+                  <AllFeats/>
+                </div>
+              </div>
+            </div>
+        </Route>
+
+          <Route exact path="/spell/:index">
+            <OneSpell/>
+          </Route>
+
+          <Route exact path="/classfeat/:index">
+            <OneClassFeat/>
+          </Route>
+
+          <Route exact path="/feat/:index">
+            <OneFeat/>
+          </Route>
+        </Switch>
+
+          <Route exact path="/homebrew">
+          <HomebrewSearch/>
+            <div className="d-flex flex-wrap justify-content-center">
+              <div className="m-4">
+                <HomebrewAllSpells/>
+              </div>
+              <div className="d-flex justify-content-center">
+                <div className="m-4">
+                  <HomebrewAllClassFeats/>
+                </div><div className="m-4">
+                  <HomebrewAllFeats/>
+                </div>
+              </div>
+            </div>
+          </Route>
+
+
+          <Route exact path="/homebrewSearch/:infoType/:searchName">
+          <HomebrewSearch/>
             <div className="d-flex flex-wrap justify-content-center">
               <div className="m-4">
                 <HomebrewAllSpells/>
@@ -131,19 +164,6 @@ function App() {
             <EditSpell formSubmitted = {formSubmitted} setFormSubmitted= {setFormSubmitted}/>
           </Route>
 
-
-          <Route exact path="/spell/:index">
-            <OneSpell/>
-          </Route>
-
-          <Route exact path="/classfeat/:index">
-            <OneClassFeat/>
-          </Route>
-
-          <Route exact path="/feat/:index">
-            <OneFeat/>
-          </Route>
-        </Switch>
 
         <div className="d-flex justify-content-center fixed-bottom background">
           <a className="bg-dark px-1 border border-2 border-dark rounded" href="https://github.com/VirtualShaman/DnD_Cards">GitHub Link</a>

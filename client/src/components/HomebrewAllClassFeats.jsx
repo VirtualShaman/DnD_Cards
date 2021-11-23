@@ -1,10 +1,11 @@
 import React, {useState, useEffect} from 'react';
-import axios from 'axios';
+import { useParams } from 'react-router';
+import {Link} from "react-router-dom";
+import axios from 'axios'
 
-import {Link} from "react-router-dom"
 
 const HomebrewAllClassFeats = (props) => {
-
+    const { infoType, searchName } = useParams();
     const [allClassFeats, setHomebrewAllClassFeats] = useState([])
 
     useEffect(()=>{
@@ -25,11 +26,23 @@ const HomebrewAllClassFeats = (props) => {
                     {
                         allClassFeats.map((classfeat,i)=>{
                             return (
-                                <div key = {i}>
-                                    <p><Link to={`/homebrew/classfeat/${classfeat._id}`}>
-                                        {classfeat.name}
-                                    </Link></p>
-                                </div>
+                                <div key = {`class${i}`}>
+                                {infoType==="classFeatures"||
+                                            infoType==="all"?
+                                            (((classfeat.name).toLowerCase()).includes(searchName.toLowerCase())===true?
+
+                                                    <p><Link to={`/classfeat/${classfeat._id}`}>
+                                                        {classfeat.name}
+                                                    </Link></p>
+                                            :
+                                                <div />
+                                            )
+                                        :
+                                            <p><Link to={`/classfeat/${classfeat._id}`}>
+                                                {classfeat.name}
+                                            </Link></p>
+                                }
+                            </div>
                             )
                         })
                     }
