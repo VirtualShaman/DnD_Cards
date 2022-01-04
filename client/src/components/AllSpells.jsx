@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import { useParams } from 'react-router';
 import axios from 'axios';
+import '../App.css';
 
 import {Link} from "react-router-dom"
 
@@ -21,7 +22,7 @@ const AllSpells = (props) => {
     return (
         <div className="d-flex flex-column align-items-center">
             <div className="d-flex flex-column align-items-center border border-1 rounded p-3">
-                <h1>Spell List</h1>
+                <h1 className="title">Spell List</h1>
                 <div style={{overflow: "auto", maxHeight: "400px", width: "300px"}}>
                     {
                         allSpells.map((spell,i)=>{

@@ -44,9 +44,9 @@ const OneFeat = () => {
                                 }
                                 <p>{featInfo.description}</p>
                         <div class="d-flex">
-                            <button onClick={deleteFeat}>Delete</button>
+                            <button className="navbtn" onClick={deleteFeat}>Delete</button>
                             <Link to = {`/feat/edit/${featInfo._id}`}>
-                                <button>Edit</button>
+                                <button className="navbtn">Edit</button>
                             </Link>
                         </div>
                     </div>

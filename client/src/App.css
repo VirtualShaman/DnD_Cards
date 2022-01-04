@@ -1,4 +1,6 @@
-.App {
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+
+/* .App {
   text-align: center;
 }
 
@@ -35,4 +37,42 @@
   to {
     transform: rotate(360deg);
   }
+} */
+
+* {
+  font-family: 'Playfair Display', serif;
+}
+
+/* .background {
+  background-image: url(./img/background.png);
+  background-position: 'center';
+  background-repeat: 'no-repeat';
+  background-size: 'cover'
+} */
+
+.navbtn {
+  margin: 5px;
+  padding: 0px 2px;
+  color: black;
+  background-color: transparent;
+  border: 2px solid black;
+  border-radius: 4px;
+}
+
+.title {
+  color: #5d3215;
+  text-decoration: underline;
+}
+
+.linkbtn {
+  margin: 0px 2px;
+  padding: 0px 2px;
+  color: black;
+  background-color: #eee8d1;
+  border: 2px solid black;
+  border-radius: 4px;
+}
+
+.bold {
+  font-weight: bold;
 }

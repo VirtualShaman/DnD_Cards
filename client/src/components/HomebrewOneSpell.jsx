@@ -69,9 +69,9 @@ const OneSpell = () => {
                             }
                         </table>
                         <div class="d-flex">
-                            <button onClick={deleteSpell}>Delete</button>
+                            <button className="navbtn" onClick={deleteSpell}>Delete</button>
                             <Link to = {`/spell/edit/${spellInfo._id}`}>
-                                <button>Edit</button>
+                                <button className="navbtn">Edit</button>
                             </Link>
                         </div>
                     </div>

@@ -80,49 +80,49 @@ const EditSpellForm = (props) => {
                     <tr>
                         <td>Spell Name:</td>
                         <td>
-                            <input onChange={changeHandler} type="text" name="name" value={formInfo.name}/>
+                            <input className="navbtn" onChange={changeHandler} type="text" name="name" value={formInfo.name}/>
                             <p>{formErrors.name?.message}</p>
                         </td>
                     </tr>
                     <tr>
                         <td>Level:</td>
                         <td>
-                            <input onChange={changeHandler} type="text" name="level" value={formInfo.level}/>
+                            <input className="navbtn" onChange={changeHandler} type="text" name="level" value={formInfo.level}/>
                             <p>{formErrors.level?.message}</p>
                         </td>
                     </tr>
                     <tr>
                         <td>Casting Time:</td>
                         <td>
-                            <input onChange={changeHandler} type="text" name="castingTime" value={formInfo.castingTime}/>
+                            <input className="navbtn" onChange={changeHandler} type="text" name="castingTime" value={formInfo.castingTime}/>
                             <p>{formErrors.castingTime?.message}</p>
                         </td>
                     </tr>
                     <tr>
                         <td>Range:</td>
                         <td>
-                            <input onChange={changeHandler} type="text" name="range" value={formInfo.range}/>
+                            <input className="navbtn" onChange={changeHandler} type="text" name="range" value={formInfo.range}/>
                             <p>{formErrors.range?.message}</p>
                         </td>
                     </tr>
                     <tr>
                         <td>Components:</td>
                         <td>
-                            <input onChange={changeHandler} type="text" name="components" value={formInfo.components}/>
+                            <input className="navbtn" onChange={changeHandler} type="text" name="components" value={formInfo.components}/>
                             <p>{formErrors.components?.message}</p>
                         </td>
                     </tr>
                     <tr>
                         <td>Duration:</td>
                         <td>
-                            <input onChange={changeHandler} type="text" name="duration" value={formInfo.duration}/>
+                            <input className="navbtn" onChange={changeHandler} type="text" name="duration" value={formInfo.duration}/>
                             <p>{formErrors.duration?.message}</p>
                         </td>
                     </tr>
                     <tr>
                         <td>Description:</td>
                         <td>
-                            <textarea onChange={changeHandler} name="description" value={formInfo.description} cols="25" rows="5"></textarea>
+                            <textarea className="navbtn" onChange={changeHandler} name="description" value={formInfo.description} cols="25" rows="5"></textarea>
                             <p>{formErrors.description?.message}</p>
                         </td>
                     </tr>
@@ -131,12 +131,12 @@ const EditSpellForm = (props) => {
                             <br/>(Optional)
                         </td>
                         <td>
-                            <input onChange={changeHandler} type="text" name="prereq" value={formInfo.prereq}/>
+                            <input className="navbtn" onChange={changeHandler} type="text" name="prereq" value={formInfo.prereq}/>
                         </td>
                     </tr>
                 </table>
-                    <input type="submit" value="Update Spell"/>
-                    <Link to={`/homebrew/spell/${formInfo._id}`}><button>Cancel</button></Link>
+                    <input className="navbtn" type="submit" value="Update Spell"/>
+                    <Link to={`/homebrew/spell/${formInfo._id}`}><button className="navbtn">Cancel</button></Link>
                 </form>
                 :
                 <div>

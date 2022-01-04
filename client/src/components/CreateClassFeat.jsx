@@ -44,26 +44,26 @@ const NewClassFeatForm = (props) => {
 
     return (
         <div>
-            <h1>Add A New Class Feat</h1>
+            <h1 className="title">Add A New Class Feat</h1>
             <form onSubmit= {submitHandler}>
                 <table>
                     <tr>
                         <td>Class Feat Name:</td>
                         <td>
-                            <input onChange={changeHandler} type="text" name="name" value={formInfo.name}/>
+                            <input className="navbtn" onChange={changeHandler} type="text" name="name" value={formInfo.name}/>
                             <p>{formErrors.name?.message}</p>
                         </td>
                     </tr>
                     <tr>
                         <td>Description:</td>
                         <td>
-                            <textarea onChange={changeHandler} name="description" value={formInfo.description} cols="25" rows="5"></textarea>
+                            <textarea className="navbtn" onChange={changeHandler} name="description" value={formInfo.description} cols="25" rows="5"></textarea>
                             <p>{formErrors.description?.message}</p>
                         </td>
                     </tr>
                 </table>
-                <input type="submit" value="Submit New ClassFeat"/>
-                <Link to="/"><button>Cancel</button></Link>
+                <input className="navbtn" type="submit" value="Submit New ClassFeat"/>
+                <Link to="/"><button className="navbtn">Cancel</button></Link>
             </form>
         </div>
     );

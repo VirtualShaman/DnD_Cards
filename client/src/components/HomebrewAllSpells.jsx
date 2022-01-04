@@ -19,9 +19,9 @@ const HomebrewAllSpells = (props) => {
 
     return (
         <div class="d-flex flex-column align-items-center">
-            <Link to="/spell/create/:id"><button>Create A Spell</button></Link>
+            <Link to="/spell/create/:id"><button className="navbtn">Create A Spell</button></Link>
             <div class="d-flex flex-column align-items-center border border-1 rounded p-3">
-                <h1>Spell List</h1>
+                <h1 className="title">Spell List</h1>
                 <div style={{overflow: "auto", maxHeight: "400px", width: "300px"}}>
                     {
                         allSpells.map((spell,i)=>{
@@ -30,14 +30,14 @@ const HomebrewAllSpells = (props) => {
                                     {infoType==="spells"||
                                     infoType==="all"?
                                             (((spell.name).toLowerCase()).includes(searchName.toLowerCase())===true?
-                                                <p><Link to={`/spell/${spell._id}`}>
+                                                <p><Link to={`/homebrew/spell/${spell._id}`}>
                                                     {spell.name}
                                                 </Link></p>
                                             :
                                             <div/>
                                             )
                                         :
-                                            <p><Link to={`/spell/${spell._id}`}>
+                                            <p><Link to={`/homebrew/spell/${spell._id}`}>
                                                 {spell.name}
                                             </Link></p>
                                     }

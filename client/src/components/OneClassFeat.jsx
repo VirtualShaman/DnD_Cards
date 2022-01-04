@@ -21,7 +21,7 @@ const OneClassFeat = () => {
             {
                 classfeatInfo.name!=null?
                     <div class="d-flex flex-column align-items-center">
-                        <h1>{classfeatInfo.name}</h1>
+                        <h1 className="title">{classfeatInfo.name}</h1>
                         <h3>{classfeatInfo.class.name}</h3>
                         <p>{classfeatInfo.desc}</p>
                     </div>

@@ -5,6 +5,8 @@ import {
   Route,
   Link
 } from "react-router-dom"
+import './App.css';
+import background from './img/background.png'
 
 import Search from './components/Search';
 import HomebrewSearch from './components/HomebrewSearch';
@@ -37,12 +39,18 @@ import EditSpell from './components/EditSpell';
 function App() {
   const [formSubmitted, setFormSubmitted] = useState(false)
   return (
+    <div style={{
+      backgroundImage: `url(${background})`,
+      backgroundPosition: 'center',
+      backgroundSize: 'cover',
+      backgroundRepeat: 'no-repeat'
+      }}>
     <BrowserRouter>
       <div className="App" className="d-flex flex-column align-items-center">
-      <h1>DnD Info Cards</h1>
-      <Link to="/"><button>Home</button></Link>
-      <Link to="/homebrew"><button>Homebrew</button></Link>
-      <hr/>
+        <h1>DnD Info Cards</h1>
+        <Link to="/"><button className="navbtn">Home</button></Link>
+        <Link to="/homebrew"><button className="navbtn">Homebrew</button></Link>
+        <hr/>
 
 
         <Switch>
@@ -93,7 +101,7 @@ function App() {
         </Switch>
 
           <Route exact path="/homebrew">
-          <HomebrewSearch/>
+            <HomebrewSearch/>
             <div className="d-flex flex-wrap justify-content-center">
               <div className="m-4">
                 <HomebrewAllSpells/>
@@ -166,12 +174,13 @@ function App() {
 
 
         <div className="d-flex justify-content-center fixed-bottom background">
-          <a className="bg-dark px-1 border border-2 border-dark rounded" href="https://github.com/VirtualShaman/DnD_Cards">GitHub Link</a>
-          <a className="bg-dark px-1 border border-2 border-dark rounded" href="https://www.dnd5eapi.co/docs/#feats-section">DnD API</a>
+          <a className="linkbtn" href="https://github.com/VirtualShaman/DnD_Cards">GitHub Link</a>
+          <a className="linkbtn" href="https://www.dnd5eapi.co/docs/#feats-section">DnD API</a>
         </div>
 
       </div>
     </BrowserRouter>
+    </div>
   );
 }
 

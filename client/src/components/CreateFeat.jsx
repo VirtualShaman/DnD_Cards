@@ -47,13 +47,13 @@ const NewFeatForm = (props) => {
 
     return (
         <div>
-            <h1>Add A New Feat</h1>
+            <h1 className="title">Add A New Feat</h1>
             <form onSubmit= {submitHandler}>
                 <table>
                     <tr>
                         <td>Feat Name:</td>
                         <td>
-                            <input onChange={changeHandler} type="text" name="name" value={formInfo.name}/>
+                            <input className="navbtn" onChange={changeHandler} type="text" name="name" value={formInfo.name}/>
                             <p>{formErrors.name?.message}</p>
                         </td>
                     </tr>
@@ -62,19 +62,19 @@ const NewFeatForm = (props) => {
                             <br/>(Optional)
                         </td>
                         <td>
-                            <input onChange={changeHandler} type="text" name="prereq" value={formInfo.prereq}/>
+                            <input className="navbtn" onChange={changeHandler} type="text" name="prereq" value={formInfo.prereq}/>
                         </td>
                     </tr>
                     <tr>
                         <td>Description:</td>
                         <td>
-                            <textarea onChange={changeHandler} name="description" value={formInfo.description} cols="25" rows="5"></textarea>
+                            <textarea className="navbtn" onChange={changeHandler} name="description" value={formInfo.description} cols="25" rows="5"></textarea>
                             <p>{formErrors.description?.message}</p>
                         </td>
                     </tr>
                 </table>
-                <input type="submit" value="Submit New Feat"/>
-                <Link to="/"><button>Cancel</button></Link>
+                <input className="navbtn" type="submit" value="Submit New Feat"/>
+                <Link to="/"><button className="navbtn">Cancel</button></Link>
             </form>
         </div>
     );

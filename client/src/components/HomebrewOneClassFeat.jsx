@@ -39,9 +39,9 @@ const OneClassFeat = () => {
                             </tr>
                         </table>
                         <div class="d-flex">
-                            <button onClick={deleteClassFeat}>Delete</button>
+                            <button className="navbtn" onClick={deleteClassFeat}>Delete</button>
                             <Link to = {`/classfeat/edit/${classfeatInfo._id}`}>
-                                <button>Edit</button>
+                                <button className="navbtn">Edit</button>
                             </Link>
                         </div>
                     </div>

@@ -19,7 +19,7 @@ const AllClassFeats = (props) => {
     return (
         <div className="d-flex flex-column align-items-center">
             <div className="d-flex flex-column align-items-center border border-1 rounded p-3">
-                <h1>Class Feature List</h1>
+                <h1 className="title">Class Feature List</h1>
                 <div style={{overflow: "auto", maxHeight: "400px", width: "300px"}}>
                     {
                         allClassFeats.map((classfeat,i)=>

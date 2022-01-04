@@ -37,7 +37,7 @@ const Search = (props) => {
 
     return(
     <form onSubmit={submitHandler}>
-        <select onChange={changeHandler} name="infoType">
+        <select className="navbtn" onChange={changeHandler} name="infoType">
             <option value="all">All Fields</option>
             <option value="spells">Spells</option>
             <option value="classFeatures">Class Features</option>
@@ -61,10 +61,11 @@ const Search = (props) => {
         <input
             onChange={changeHandler}
             type="text"
-            placeholder="Search blog posts"
-            name="searchName" 
+            placeholder="Type Here"
+            name="searchName"
+            className="navbtn" 
         />
-        <button type="submit">Search</button>
+        <button className="navbtn" type="submit">Search</button>
     </form>
     )
 }

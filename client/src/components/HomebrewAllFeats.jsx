@@ -19,9 +19,9 @@ const HomebrewAllFeats = (props) => {
 
     return (
         <div class="d-flex flex-column align-items-center">
-            <Link to="/feat/create/:id"><button>Create A Feat</button></Link>
+            <Link to="/feat/create/:id"><button className="navbtn">Create A Feat</button></Link>
             <div class="d-flex flex-column align-items-center border border-1 rounded p-3">
-                <h1>Feat List</h1>
+                <h1 className="title">Feat List</h1>
                 <div style={{overflow: "auto", maxHeight: "400px", width: "300px"}}>
                     {
                         allFeats.map((feat,i)=>{
@@ -30,14 +30,14 @@ const HomebrewAllFeats = (props) => {
                                     {infoType==="feats"||
                                     infoType==="all"?
                                             (((feat.name).toLowerCase()).includes(searchName.toLowerCase())===true?
-                                                <p><Link to={`/feat/${feat._id}`}>
+                                                <p><Link to={`/homebrew/feat/${feat._id}`}>
                                                     {feat.name}
                                                 </Link></p>
                                             :
                                             <div/>
                                             )
                                         :
-                                            <p><Link to={`/feat/${feat._id}`}>
+                                            <p><Link to={`/homebrew/feat/${feat._id}`}>
                                                 {feat.name}
                                             </Link></p>
                                     }

@@ -21,7 +21,7 @@ const OneSpell = () => {
             {
                 spellInfo.name!=null?
                     <div class="d-flex flex-column align-items-center">
-                        <h1>{spellInfo.name}</h1>
+                        <h1 className="title">{spellInfo.name}</h1>
                         <div class="d-flex">
                             {spellInfo.classes.map((classes,i)=>{
                                 return (
@@ -29,9 +29,9 @@ const OneSpell = () => {
                                         {console.log(spellInfo.classes[i+1])}
                                     {
                                         spellInfo.classes[i+1]!==undefined?
-                                            <p class="mx-1">{classes.name}, </p>
+                                            <p className="bold" class="mx-1">{classes.name}, </p>
                                         :
-                                            <p class="mx-1">{classes.name}</p>
+                                            <p className="bold" class="mx-1">{classes.name}</p>
                                     }
                                     </div>
                                 )
@@ -39,33 +39,33 @@ const OneSpell = () => {
                         </div>
                         <table>
                             <tr>
-                                <td>Casting Level:</td>
+                                <td className="bold">Casting Level:</td>
                                 <td>{spellInfo.level}, {spellInfo.school.name}</td>
                             </tr>
                             <tr>
-                                <td>Casting Time:</td>
+                                <td className="bold">Casting Time:</td>
                                 <td>{spellInfo.casting_time}</td>
                             </tr>
                             <tr>
-                                <td>Casting Range:</td>
+                                <td className="bold">Casting Range:</td>
                                 <td>{spellInfo.range}</td>
                             </tr>
                             <tr>
-                                <td>Components:</td>
+                                <td className="bold">Components:</td>
                                 <td>{spellInfo.components}, {spellInfo.material}</td>
                             </tr>
                             <tr>
-                                <td>Duration:</td>
+                                <td className="bold">Duration:</td>
                                 <td>{spellInfo.duration}</td>
                             </tr>
                             <tr>
-                                <td>Description:</td>
+                                <td className="bold">Description:</td>
                                 <td>{spellInfo.desc}</td>
                             </tr>
                             {
                                 spellInfo.higher_level!=null?
                                 <tr>
-                                    <td>At Higher Levels:</td>
+                                    <td className="bold">At Higher Levels:</td>
                                     <td>{spellInfo.higher_level}</td>
                                 </tr>
                                 :

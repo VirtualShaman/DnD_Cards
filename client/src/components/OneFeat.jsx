@@ -21,11 +21,11 @@ const OneFeat = () => {
             {
                 featInfo.name!=null?
                     <div class="d-flex flex-column align-items-center">
-                        <h1>{featInfo.name}</h1>
+                        <h1 className="title">{featInfo.name}</h1>
                         {
                             featInfo.prerequisites!=null?
                                 <div class="d-flex">
-                                    <p>Pre-Requisite(s):</p>
+                                    <p className="bold">Pre-Requisite(s):</p>
                                     {featInfo.prerequisites.map((prerequisites,i)=>{
                                 return (
                                     <div key = {i}>
