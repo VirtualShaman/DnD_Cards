@@ -43,12 +43,13 @@
   font-family: 'Playfair Display', serif;
 }
 
-/* .background {
+.background {
   background-image: url(./img/background.png);
   background-position: 'center';
   background-repeat: 'no-repeat';
-  background-size: 'cover'
-} */
+  background-size: 'cover';
+  min-height: 800px;
+}
 
 .navbtn {
   margin: 5px;

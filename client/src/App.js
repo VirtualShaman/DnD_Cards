@@ -39,12 +39,7 @@ import EditSpell from './components/EditSpell';
 function App() {
   const [formSubmitted, setFormSubmitted] = useState(false)
   return (
-    <div style={{
-      backgroundImage: `url(${background})`,
-      backgroundPosition: 'center',
-      backgroundSize: 'cover',
-      backgroundRepeat: 'no-repeat'
-      }}>
+    <div className="background">
     <BrowserRouter>
       <div className="App" className="d-flex flex-column align-items-center">
         <h1>DnD Info Cards</h1>
@@ -173,7 +168,7 @@ function App() {
           </Route>
 
 
-        <div className="d-flex justify-content-center fixed-bottom background">
+        <div className="d-flex justify-content-center fixed-bottom">
           <a className="linkbtn" href="https://github.com/VirtualShaman/DnD_Cards">GitHub Link</a>
           <a className="linkbtn" href="https://www.dnd5eapi.co/docs/#feats-section">DnD API</a>
         </div>
